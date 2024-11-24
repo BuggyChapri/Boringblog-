@@ -1,0 +1,64 @@
+{% extends 'layout.html' %} 
+{% block body %}
+<div class="container">
+    <header class="border-bottom lh-1 py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="link-secondary" href="/create_blog">Create</a>
+        </div>
+        <div class="col-4 text-center">
+          <a
+            class="blog-header-logo text-body-emphasis text-decoration-none"
+            href="#"
+            >Boring Blogs</a
+          >
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="btn btn-sm btn-outline-secondary" href="/contact">Contact us</a>
+        </div>
+      </div>
+    </header>
+  
+    <div class="nav-scroller py-1 mb-3 border-bottom">
+      <nav class="nav nav-underline justify-content-center">
+        <a class="text-center nav-item nav-link link-body-emphasis blog-header-logo text-body-emphasis text-decoration-none" href="#">No categories, no filters – just pure unfiltered mediocrity. Enjoy the scroll!</a>
+      </nav>
+    </div>
+  </div>
+<div class="container my-5">
+  <h1 class="mb-4 text-center">Want to Contact Us?</h1>
+  <form action="/contact" method="post" class="shadow p-4 rounded bg-light">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        class="form-control" 
+        placeholder="Enter your name" 
+        required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Your Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        class="form-control" 
+        placeholder="Enter your email" 
+        required />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Message</label>
+      <textarea 
+        id="password" 
+        name="password" 
+        class="form-control" 
+        rows="5" 
+        placeholder="Write your message here" 
+        required></textarea>
+    </div>
+    <a type="submit" href="/" class="btn btn-primary w-100">Send</a>
+  </form>
+</div>
+{% endblock %}

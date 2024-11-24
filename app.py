@@ -51,8 +51,8 @@ def create_blog():
     return render_template("create_blog.html")
 
 
-@app.route("/login", methods = ["GET","POST"])
-def login():
+@app.route("/contact", methods = ["GET","POST"])
+def contact():
     if request.method == "POST":
         name = request.form.get("name")
         email = request.form.get("email")
@@ -60,7 +60,7 @@ def login():
         login = Login_data(name = name, email = email, password = password)
         db.session.add(login)
         db.session.commit() 
-    return render_template("login.html")
+    return render_template("contact.html")
 
 if __name__ == "__main__":
     with app.app_context():
