@@ -1,0 +1,186 @@
+{% extends 'layout.html' %} {% block body %}
+
+
+<div class="container">
+  <header class="border-bottom lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="/create_blog">Create</a>
+      </div>
+      <div class="col-4 text-center">
+        <a
+          class="blog-header-logo text-body-emphasis text-decoration-none"
+          href="#"
+          >Boring Blogs</a
+        >
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="btn btn-sm btn-outline-secondary" href="#">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-3 border-bottom">
+    <nav class="nav nav-underline justify-content-center">
+      <a class="text-center nav-item nav-link link-body-emphasis blog-header-logo text-body-emphasis text-decoration-none" href="#">No categories, no filters – just pure unfiltered mediocrity. Enjoy the scroll!</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Welcome To the Boring Blogs</h1>
+      <p class="lead my-3">
+        Welcome to the world of Broing Blogs – where excitement goes to take a
+        nap and the coffee's always decaf. Perfect for those moments when you
+        think, 'I could use a thrilling dose of mediocrity.' Dive in... or
+        don't. It's chill either way.
+      </p>
+      <p class="lead mb-0">
+        <a href="#readmore" class="text-body-emphasis fw-bold">Like it Read more</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+
+    <div class="container">
+        <div
+          id="readmore" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+        >
+          <div class="col p-4 d-flex flex-column position-static">
+            <h5 class="mb-0">The Unofficial Guide to Procrastination</h5>
+            <p class="card-text mb-auto">Ah, procrastination. The art of convincing yourself that you really need to reorganize your sock drawer instead of finishing that project. It's a skill, really, one that many of us have mastered to an almost professional level.
+
+                But let’s be real, procrastination isn’t just about delaying tasks—it's a lifestyle. It’s those precious moments when you tell yourself, “I’ll start in five minutes…” and then three hours later, you’ve watched every cat video on YouTube and somehow found yourself deep into the Wikipedia page for "The History of Paperclips."
+                
+                We’ve all been there, right?
+                
+                The trick is not to beat yourself up. Embrace the chaos. After all, the deadline will come eventually. And when it does, you’ll have all the adrenaline to power through it. At least that’s what you tell yourself.
+                
+                So, next time you feel the urge to procrastinate, remember: you’re not wasting time, you’re gathering experience for those last-minute creative bursts. Keep going, champion.
+                
+                Now, who’s up for a snack break?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+
+        {% for post in allData %}
+        <div class="col p-4 flex-column position-static">
+            <h5 class="mb-0">{{post.blog_title}}</h5>
+            <a
+              href="/show/{{post.srno}}"
+              class="inline-link"
+              style="display: inline; margin-right: 10px;"
+            >
+              Continue reading
+            </a>
+            <a
+            href="/delete/{{post.srno}}"
+            class="inline-link"
+            style="display: inline; margin-right: 10px;"
+          >
+            Delete Post
+          </a>
+          <p class="card-text mb-auto">{{post.blog_content}}</p>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+  <div class="row g-5 container-xxl">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">From the Broing Site</h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">
+          November 22, 2024 by Broing Blogs
+        </h2>
+        <p class="blog-post-meta">November 22, 2024 by <a href="#">Boring blogs</a></p>
+
+        <p>
+          Welcome to the official Broing Blog, where we embrace the fine art of
+          doing as little as possible while still making it look like something.
+          In this post, we’ll explore content creation that’s not just efficient
+          but also highly amusing—at least to us. From lists to code snippets,
+          this post has everything you didn’t know you needed in your life. Grab
+          a cup of coffee (or pretend to) and let’s dive in. This paragraph is
+          here to set the tone. It’s lighthearted, mildly repetitive, and
+          perfectly content to fill the space so the page doesn’t look empty.
+          The best part? You’ll probably see this same paragraph again—because
+          consistency is key, even in mediocrity.
+        </p>
+        <hr />
+        <p>
+          This is some additional placeholder content. It has been written with
+          great effort to occupy space and showcase how verbose musings can look
+          on the screen. If it seems familiar, don’t worry—you’ll see this
+          paragraph pop up again and again.
+        </p>
+        <h2>Blockquotes</h2>
+        <blockquote class="blockquote">
+          <p>Doing nothing is hard; you never know when you're done.</p>
+        </blockquote>
+        <p>
+          Blockquotes are great for adding gravitas to any content, even if the
+          content itself isn’t exactly groundbreaking. Feel free to borrow this
+          one when you need to look introspective. This is another paragraph
+          placeholder, which exists to bulk up this section. It’s thoughtfully
+          redundant to ensure this blog feels substantial. Keep an eye out for
+          this exact same paragraph—it’ll be back.
+        </p>
+        <h3>Boring lists</h3>
+        <p>
+            We know everyone loves a good list. They’re structured, easy to skim, and perfect for pretending to be organized.
+        </p>
+        <ul>
+          <li>Procrastinate like a pro.</li>
+          <li>Perfect the art of strategic bathroom breaks.</li>
+          <li>Make a to-do list, then ignore it.</li>
+        </ul>
+
+
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>
+    Blog template built for
+    <a href="https://getbootstrap.com/">Bootstrap</a> by
+    <a href="https://twitter.com/mdo">@mdo</a>.
+  </p>
+  <p class="mb-0">
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+<script
+  src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1>
+        Welocme to The boring Blog
+    </h1>
+    <form action="/login" method="post">
+        <input type="text" placeholder="your_name" name="name">
+        <input type="email" placeholder="your_email" name="email">
+        <input type="password" placeholder="your_password" name="password">
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

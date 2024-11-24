@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+    <header class="border-bottom lh-1 py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <a class="link-secondary" href="/create_blog">Create</a>
+        </div>
+        <div class="col-4 text-center">
+          <a
+            class="blog-header-logo text-body-emphasis text-decoration-none"
+            href="/"
+            >Boring Blogs</a
+          >
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <a class="btn btn-sm btn-outline-secondary" href="#">Contact us</a>
+        </div>
+      </div>
+    </header>
+  
+    <div class="nav-scroller py-1 mb-3 border-bottom">
+      <nav class="nav nav-underline justify-content-center">
+        <a
+          class="text-center nav-item nav-link link-body-emphasis blog-header-logo text-body-emphasis text-decoration-none"
+          href="#"
+          >Just read and write</a
+        >
+      </nav>
+    </div>
+  </div>
+    <div class="container mt-5">
+        <img src="{{ allData.blog_img }}" class="img-fluid rounded mb-4 shadow-lg mx-auto d-block">
+        <h1 class="text-dark text-center mb-3">{{ allData.blog_title }}</h1>
+        <p class="text-dark text-justify" style="line-height: 1.6; font-size: 1.2rem;">{{ allData.blog_content }}</p>
+
+        {% if allData.additional_headings %}
+        <h3 class="text-secondary mt-4">Additional Headings:</h3>
+        <ul class="list-group">
+            {% for heading in allData.additional_headings.split(',') %}
+            <li class="list-group-item">{{ heading.strip() }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+
+    </div>
+{% endblock %}
