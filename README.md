@@ -16,6 +16,7 @@ If you want to run it on local Machine then, The things you need before installi
 
 * You need python 3
 * And you need flask 
+* And also you need flask sqlalchemy
 * Oh, and don't forget a browser 
 
 ## Deployment
